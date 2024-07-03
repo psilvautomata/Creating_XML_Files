@@ -1,0 +1,41 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+<Certificado_Soufer>
+  <Header>
+    <Cliente_Num>104950</Cliente_Num>
+    <Descricao_Cliente>INDUSCAR</Descricao_Cliente>
+    <NF>000519610-2</NF>
+    <Data_NF>08/12/2022</Data_NF>
+  </Header>
+  <Dados_Bobina>
+    <Lote>0004612996</Lote>
+    <Aco>ZAR 230</Aco>
+    <Espessura>1.95</Espessura>
+    <Peso>14340.0</Peso>
+    <Codigo_SAP>92500001006-T</Codigo_SAP>
+    <Descricao_SAP>BZB 1,95 X 1200</Descricao_SAP>
+  </Dados_Bobina>
+  <Caracteristiscas>
+    <Propriedades_Quimicas>
+      <C>0.03</C>
+      <Si>0.01</Si>
+      <Mn>0.2</Mn>
+      <P>0.014</P>
+      <S>0.016</S>
+      <Al>0.03</Al>
+      <Cu>0.01</Cu>
+      <Nb>0.001</Nb>
+      <V>0.001</V>
+      <Ti>0.001</Ti>
+      <Cr>0.01</Cr>
+      <Ni>0.01</Ni>
+      <Mo>0.0</Mo>
+      <N>0.0024</N>
+    </Propriedades_Quimicas>
+    <Propriedades_Mecanicas>
+      <LE>276.0</LE>
+      <LR>360.0</LR>
+      <ALONG>41.0</ALONG>
+    </Propriedades_Mecanicas>
+  </Caracteristiscas>
+</Certificado_Soufer>
