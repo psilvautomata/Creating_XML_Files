@@ -21,7 +21,7 @@ colunas = arquivo_excel.columns
 #Loop for Excel file rows
 for n in range(2,ultima_linha): 
     # If value = "" then print "", by default the printed values of empty rolls are zero.
-    arquivo_excel = arquivo_excel.fillna('')
+    arquivo_excel = arquivo_excel.fillna(' ')
     #If not empty, it searches for the columns positions (.iloc method) in Excel file specified in row 7
     if not arquivo_excel.empty:
         Descricao_Cliente = str(arquivo_excel.iloc[n, colunas.get_loc("Descricao_Cliente")])
