@@ -16,14 +16,13 @@ colunas = arquivo_excel.columns
 
 #[Characteristics values feeding]
 
-#Header
-
 #Loop for Excel file rows
 for n in range(2,ultima_linha): 
-    # If value = "" then print "", by default the printed values of empty rolls are zero.
+    # If value = "", then print " ", by default the printed values of empty rolls are zero.
     arquivo_excel = arquivo_excel.fillna(' ')
     #If not empty, it searches for the columns positions (.iloc method) in Excel file specified in row 7
-    if not arquivo_excel.empty:
+    if not arquivo_excel.empty:     
+        #Header Values
         Descricao_Cliente = str(arquivo_excel.iloc[n, colunas.get_loc("Descricao_Cliente")])
         Cliente = str(arquivo_excel.iloc[n, colunas.get_loc("Cliente")])
         Nota_Fiscal = str(arquivo_excel.iloc[n, colunas.get_loc("Nota_Fiscal")])
@@ -53,19 +52,20 @@ for n in range(2,ultima_linha):
         Molibidenio = str(arquivo_excel.iloc[n, colunas.get_loc("Mo")])
         Nitrogenio = str(arquivo_excel.iloc[n, colunas.get_loc("N")])
     
-#Mechanical  Values
+        #Mechanical Properties Values
         Alongamento = str(arquivo_excel.iloc[n, colunas.get_loc("AL2")])
         LimEscoamento = str(arquivo_excel.iloc[n, colunas.get_loc("LE")])
         LimResistencia = str(arquivo_excel.iloc[n, colunas.get_loc("LR")])
 
 #[XML_TREE]
 
-#Creating the root
+        #Creating the root
         raiz = ET.Element("Certificado_Soufer")
 
-#Children elements
-        #Header - Child
+        #Header Parent
         Header = ET.SubElement(raiz, "Header")
+        
+        #Children
         cliente_num = ET.SubElement(Header, "Cliente_Num")
         cliente_num.text = Cliente
         des_cliente = ET.SubElement(Header, "Descricao_Cliente")
@@ -75,8 +75,10 @@ for n in range(2,ultima_linha):
         des_NF = ET.SubElement(Header, "Data_NF")
         des_NF.text = Data_Nota_Fiscal
 
-        #Coil data - child
+        #Coil data Parent
         dados_bobina = ET.SubElement(raiz, "Dados_Bobina")
+        
+        #Coil data Children
         loteXML = ET.SubElement(dados_bobina, "Lote")
         loteXML.text = Lote
         acoXML = ET.SubElement(dados_bobina, "Aco")
@@ -90,12 +92,13 @@ for n in range(2,ultima_linha):
         dessapXML = ET.SubElement(dados_bobina, "Descricao_SAP")
         dessapXML.text = Descricao_SAP
 
-        #Adding charcaterisitics child to root
+        #charcaterisitics Parent
         caracteristiscas = ET.SubElement(raiz, "Caracteristiscas")
 
-        #Chemical Composition Elements values
+        #prop_quim Child
         prop_quim = ET.SubElement(caracteristiscas, "Propriedades_Quimicas")
 
+        #Chemical Composition Grandchildren
         carbonoXML = ET.SubElement(prop_quim, "C")
         carbonoXML.text = str(Carbono)
 
@@ -138,8 +141,10 @@ for n in range(2,ultima_linha):
         nitrogenioXML = ET.SubElement(prop_quim, "N")
         nitrogenioXML.text = str(Nitrogenio)
 
-        #Mechanical Properties Elements values
+        #prop_mec Child
         prop_mec = ET.SubElement(caracteristiscas, "Propriedades_Mecanicas")
+        
+        #Mechanical Properties Grandchildren
         LeXML = ET.SubElement(prop_mec, "LE")
         LeXML.text = str(LimEscoamento)
         LrXML = ET.SubElement(prop_mec, "LR")
