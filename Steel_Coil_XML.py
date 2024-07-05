@@ -23,39 +23,39 @@ for n in range(2,ultima_linha):
     #If not empty, it searches for the columns positions (.iloc method) in Excel file specified in row 7
     if not arquivo_excel.empty:     
         #Header Values
-        Descricao_Cliente = str(arquivo_excel.iloc[n, colunas.get_loc("Descricao_Cliente")])
-        Cliente = str(arquivo_excel.iloc[n, colunas.get_loc("Cliente")])
-        Nota_Fiscal = str(arquivo_excel.iloc[n, colunas.get_loc("Nota_Fiscal")])
-        Data_Nota_Fiscal = str(arquivo_excel.iloc[n, colunas.get_loc("Data_Nota_Fiscal")])
+        descricao_Cliente = str(arquivo_excel.iloc[n, colunas.get_loc("Descricao_Cliente")])
+        cliente = str(arquivo_excel.iloc[n, colunas.get_loc("Cliente")])
+        nota_Fiscal = str(arquivo_excel.iloc[n, colunas.get_loc("Nota_Fiscal")])
+        data_Nota_Fiscal = str(arquivo_excel.iloc[n, colunas.get_loc("Data_Nota_Fiscal")])
 
         #Batch Values
-        Lote = str(arquivo_excel.iloc[n, colunas.get_loc("Lote")])
-        Peso = str(arquivo_excel.iloc[n, colunas.get_loc("Peso")])
-        Cod_SAP = str(arquivo_excel.iloc[n, colunas.get_loc("Cod_SAP")])
-        Descricao_SAP = str(arquivo_excel.iloc[n, colunas.get_loc("Descricao_SAP")])
-        Aco = str(arquivo_excel.iloc[n, colunas.get_loc("Aco")])
-        Espessura = str(arquivo_excel.iloc[n, colunas.get_loc("Espessura")])
+        lote = str(arquivo_excel.iloc[n, colunas.get_loc("Lote")])
+        peso = str(arquivo_excel.iloc[n, colunas.get_loc("Peso")])
+        cod_SAP = str(arquivo_excel.iloc[n, colunas.get_loc("Cod_SAP")])
+        descricao_SAP = str(arquivo_excel.iloc[n, colunas.get_loc("Descricao_SAP")])
+        aco = str(arquivo_excel.iloc[n, colunas.get_loc("Aco")])
+        espessura = str(arquivo_excel.iloc[n, colunas.get_loc("Espessura")])
 
         #Chemical Composition Values
-        Carbono = str(arquivo_excel.iloc[n, colunas.get_loc("C")])
-        Silicio = str(arquivo_excel.iloc[n, colunas.get_loc("Si")])
-        Manganes = str(arquivo_excel.iloc[n, colunas.get_loc("Mn")])
-        Fosforo = str(arquivo_excel.iloc[n, colunas.get_loc("P")])
-        Enxofre = str(arquivo_excel.iloc[n, colunas.get_loc("S")])
-        Aluminio = str(arquivo_excel.iloc[n, colunas.get_loc("Al")])
-        Cobre = str(arquivo_excel.iloc[n, colunas.get_loc("Cu")])
-        Niobio = str(arquivo_excel.iloc[n, colunas.get_loc("Nb")])
-        Vanadio = str(arquivo_excel.iloc[n, colunas.get_loc("V")])
-        Titanio = str(arquivo_excel.iloc[n, colunas.get_loc("Ti")])
-        Cromo = str(arquivo_excel.iloc[n, colunas.get_loc("Cr")])
-        Niquel = str(arquivo_excel.iloc[n, colunas.get_loc("Ni")])
-        Molibidenio = str(arquivo_excel.iloc[n, colunas.get_loc("Mo")])
-        Nitrogenio = str(arquivo_excel.iloc[n, colunas.get_loc("N")])
+        carbono = str(arquivo_excel.iloc[n, colunas.get_loc("C")])
+        silicio = str(arquivo_excel.iloc[n, colunas.get_loc("Si")])
+        manganes = str(arquivo_excel.iloc[n, colunas.get_loc("Mn")])
+        fosforo = str(arquivo_excel.iloc[n, colunas.get_loc("P")])
+        enxofre = str(arquivo_excel.iloc[n, colunas.get_loc("S")])
+        aluminio = str(arquivo_excel.iloc[n, colunas.get_loc("Al")])
+        cobre = str(arquivo_excel.iloc[n, colunas.get_loc("Cu")])
+        niobio = str(arquivo_excel.iloc[n, colunas.get_loc("Nb")])
+        vanadio = str(arquivo_excel.iloc[n, colunas.get_loc("V")])
+        titanio = str(arquivo_excel.iloc[n, colunas.get_loc("Ti")])
+        cromo = str(arquivo_excel.iloc[n, colunas.get_loc("Cr")])
+        niquel = str(arquivo_excel.iloc[n, colunas.get_loc("Ni")])
+        molibidenio = str(arquivo_excel.iloc[n, colunas.get_loc("Mo")])
+        nitrogenio = str(arquivo_excel.iloc[n, colunas.get_loc("N")])
     
         #Mechanical Properties Values
-        Alongamento = str(arquivo_excel.iloc[n, colunas.get_loc("AL2")])
-        LimEscoamento = str(arquivo_excel.iloc[n, colunas.get_loc("LE")])
-        LimResistencia = str(arquivo_excel.iloc[n, colunas.get_loc("LR")])
+        alongamento = str(arquivo_excel.iloc[n, colunas.get_loc("AL2")])
+        limEscoamento = str(arquivo_excel.iloc[n, colunas.get_loc("LE")])
+        limResistencia = str(arquivo_excel.iloc[n, colunas.get_loc("LR")])
 
 #[XML_TREE]
 
@@ -63,34 +63,34 @@ for n in range(2,ultima_linha):
         raiz = ET.Element("Certificado_Soufer")
 
         #Header Parent
-        Header = ET.SubElement(raiz, "Header")
+        header = ET.SubElement(raiz, "Header")
         
         #Children
-        cliente_num = ET.SubElement(Header, "Cliente_Num")
-        cliente_num.text = Cliente
-        des_cliente = ET.SubElement(Header, "Descricao_Cliente")
-        des_cliente.text = Descricao_Cliente
-        nf = ET.SubElement(Header, "NF")
-        nf.text = Nota_Fiscal
-        des_NF = ET.SubElement(Header, "Data_NF")
-        des_NF.text = Data_Nota_Fiscal
+        cliente_num = ET.SubElement(header, "Cliente_Num")
+        cliente_num.text = cliente
+        des_cliente = ET.SubElement(header, "Descricao_Cliente")
+        des_cliente.text = descricao_Cliente
+        nf = ET.SubElement(header, "NF")
+        nf.text = nota_Fiscal
+        des_NF = ET.SubElement(header, "Data_NF")
+        des_NF.text = data_Nota_Fiscal
 
         #Coil data Parent
         dados_bobina = ET.SubElement(raiz, "Dados_Bobina")
         
         #Coil data Children
         loteXML = ET.SubElement(dados_bobina, "Lote")
-        loteXML.text = Lote
+        loteXML.text = lote
         acoXML = ET.SubElement(dados_bobina, "Aco")
-        acoXML.text = Aco
+        acoXML.text = aco
         espessuraXML = ET.SubElement(dados_bobina, "Espessura")
-        espessuraXML.text = Espessura
+        espessuraXML.text = espessura
         pesoXML = ET.SubElement(dados_bobina, "Peso")
-        pesoXML.text = Peso
+        pesoXML.text = peso
         codsapXML = ET.SubElement(dados_bobina, "Codigo_SAP")
-        codsapXML.text = Cod_SAP
+        codsapXML.text = cod_SAP
         dessapXML = ET.SubElement(dados_bobina, "Descricao_SAP")
-        dessapXML.text = Descricao_SAP
+        dessapXML.text = descricao_SAP
 
         #charcaterisitics Parent
         caracteristiscas = ET.SubElement(raiz, "Caracteristiscas")
@@ -100,57 +100,57 @@ for n in range(2,ultima_linha):
 
         #Chemical Composition Grandchildren
         carbonoXML = ET.SubElement(prop_quim, "C")
-        carbonoXML.text = str(Carbono)
+        carbonoXML.text = str(carbono)
 
         silicioXML = ET.SubElement(prop_quim, "Si")
-        silicioXML.text = str(Silicio)
+        silicioXML.text = str(silicio)
 
         manganesXML = ET.SubElement(prop_quim, "Mn")
-        manganesXML.text = str(Manganes)
+        manganesXML.text = str(manganes)
 
         fosforoXML = ET.SubElement(prop_quim, "P")
-        fosforoXML.text = str(Fosforo)
+        fosforoXML.text = str(fosforo)
 
         enxofreXML = ET.SubElement(prop_quim, "S")
-        enxofreXML.text = str(Enxofre)
+        enxofreXML.text = str(enxofre)
 
         aluminioXML = ET.SubElement(prop_quim, "Al")
-        aluminioXML.text = str(Aluminio)
+        aluminioXML.text = str(aluminio)
 
         cobreXML = ET.SubElement(prop_quim, "Cu")
-        cobreXML.text = str(Cobre)
+        cobreXML.text = str(cobre)
 
         niobioXML = ET.SubElement(prop_quim, "Nb")
-        niobioXML.text = str(Niobio)
+        niobioXML.text = str(niobio)
 
         vanadioXML = ET.SubElement(prop_quim, "V")
-        vanadioXML.text = str(Vanadio)
+        vanadioXML.text = str(vanadio)
 
         titanioXML = ET.SubElement(prop_quim, "Ti")
-        titanioXML.text = str(Titanio)
+        titanioXML.text = str(titanio)
 
         cromoXML = ET.SubElement(prop_quim, "Cr")
-        cromoXML.text = str(Cromo)
+        cromoXML.text = str(cromo)
 
         niquelXML = ET.SubElement(prop_quim, "Ni")
-        niquelXML.text = str(Niquel)
+        niquelXML.text = str(niquel)
 
         molibidenioXML = ET.SubElement(prop_quim, "Mo")
-        molibidenioXML.text = str(Molibidenio)
+        molibidenioXML.text = str(molibidenio)
 
         nitrogenioXML = ET.SubElement(prop_quim, "N")
-        nitrogenioXML.text = str(Nitrogenio)
+        nitrogenioXML.text = str(nitrogenio)
 
         #prop_mec Child
         prop_mec = ET.SubElement(caracteristiscas, "Propriedades_Mecanicas")
         
         #Mechanical Properties Grandchildren
-        LeXML = ET.SubElement(prop_mec, "LE")
-        LeXML.text = str(LimEscoamento)
-        LrXML = ET.SubElement(prop_mec, "LR")
-        LrXML.text = str(LimResistencia)
+        leXML = ET.SubElement(prop_mec, "LE")
+        leXML.text = str(limEscoamento)
+        lrXML = ET.SubElement(prop_mec, "LR")
+        lrXML.text = str(limResistencia)
         alongXML = ET.SubElement(prop_mec, "ALONG")
-        alongXML.text = str(Alongamento)
+        alongXML.text = str(alongamento)
 
         #Creating the root and saving the files
         caminho_salvar = 'your/path'
