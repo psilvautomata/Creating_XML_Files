@@ -155,7 +155,7 @@ for n in range(2,ultima_linha):
         #Creating the root and saving the files
         caminho_salvar = 'your/path'
         arvoreXML = ET.ElementTree(raiz)
-        arquivo_xml = os.path.join(caminho_salvar, f"{Lote}.xml")
+        arquivo_xml = os.path.join(caminho_salvar, f"{lote}.xml")
         arvoreXML.write(arquivo_xml, encoding="utf-8", xml_declaration=True)
 
         #Message "XML files created with sucess"
